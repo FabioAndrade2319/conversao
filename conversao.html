@@ -19,13 +19,19 @@
 		function converter() {
 			soma = 0;
 			binariostr = binario.value
-			tamanho = binariostr.length;
+			indice = binariostr.length - 1;
 			
-			for(i = tamanho; i >= 0; i-- ){
-				soma = soma + 
+			for(i = indice; i >= 0; i-- ){
+				// console.log(`indice = ${indice}`);
+				// console.log(`i = ${i}`);
+				soma = soma + binariostr[i] * Math.pow(2,indice - i);
+				// console.log(`soma = ${soma}`);
+				decimal.value = soma;
 			}
 
 		}
+
+		botao.addEventListener("click",converter);
 	</script>
 
 </body>
